@@ -2,6 +2,7 @@ import re
 import logging
 import warnings
 import os
+import random
 from transformers import pipeline
 
 # ----------------------------
@@ -21,7 +22,6 @@ summarizer = pipeline(
     model="google/flan-t5-small"
 )
 
-
 # ----------------------------
 # Clean model output
 # ----------------------------
@@ -40,29 +40,37 @@ def clean_text(text: str) -> str:
     # Remove repeated spaces
     text = re.sub(r"\s{2,}", " ", text)
 
-    # Remove trailing incomplete sentence fragments
+    # Remove incomplete trailing punctuation
     text = re.sub(r"\s+\.$", ".", text)
 
     return text.strip()
 
 
-# ----------------------------
-# Generate Summary
-# ----------------------------
 def generate_summary(text: str, max_length: int = 200) -> str:
     """
-    Generate a high-quality summary using FLAN-T5-small
-    with stronger coherence & repetition control.
+    Generate a high-quality abstractive summary using FLAN-T5-small
+    with stronger variation and anti-copy behavior.
     """
 
-    word_count = len(text.split())
-
-    if word_count < 40:
+    if len(text.split()) < 40:
         return "Input text is too short to summarize."
 
+    styles = [
+        "Rewrite the following content into a concise summary.",
+        "Provide a professional abstract of the text.",
+        "Summarize the key insights clearly.",
+        "Explain the core information briefly.",
+        "Create a short analytical summary."
+    ]
+
+    instruction = random.choice(styles)
+
     prompt = (
-        "Provide a clear, concise, and non-repetitive summary of the following text. "
-        "Focus on key facts, important statistics, causes, impacts, and conclusions.\n\n"
+        f"{instruction}\n\n"
+        "IMPORTANT:\n"
+        "- Do NOT copy the first sentence.\n"
+        "- Rephrase all content in your own words.\n"
+        "- Avoid repeating phrases from the original text.\n\n"
         f"{text}\n\n"
         "Summary:"
     )
@@ -70,15 +78,12 @@ def generate_summary(text: str, max_length: int = 200) -> str:
     result = summarizer(
         prompt,
         max_new_tokens=max_length,
-        min_new_tokens=80,
-        do_sample=False,              # deterministic (best for summarization)
-        num_beams=5,                  # better reasoning
-        repetition_penalty=1.8,       # stronger repetition control
-        no_repeat_ngram_size=4,       # prevents phrase repetition
-        length_penalty=1.2,           # avoids too-short output
-        early_stopping=True
+        min_new_tokens=70,
+        do_sample=True,              # 🔥 allows variation
+        temperature=0.9,             # stronger randomness
+        top_p=0.95,
+        repetition_penalty=1.8,
+        no_repeat_ngram_size=4
     )
 
-    summary = result[0]["generated_text"]
-
-    return clean_text(summary)
+    return clean_text(result[0]["generated_text"])
