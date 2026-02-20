@@ -99,6 +99,33 @@ text-summarizer-cli/
 
 ---
 
+
+### 📝 How to Use
+
+To generate a summary, type the input text inside double quotes and press Enter:
+
+```bash
+python main.py "Your long input text goes here..."
+```
+
+Make sure the entire input text is enclosed within double quotes.  
+After pressing Enter, the model will process the text and generate a structured summary in the terminal.
+
+---
+
+## 🚀 Upcoming Features
+
+Future updates will include:
+
+- 💾 Save generated summaries to local files  
+- 📂 View previously saved summaries  
+- 📊 Display word count of the generated summary  
+- ⏱ Show time taken to generate the summary  
+- 🎯 Summary length modes (short / medium / long)  
+- 📄 File input support  
+
+Stay tuned for improvements as the project evolves.
+
 ### Author
 
 Ronit Maheshwari  
