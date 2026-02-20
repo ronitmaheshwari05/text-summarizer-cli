@@ -95,7 +95,7 @@ text-summarizer-cli/
 
 ## 📸 Demo
 
-![CLI Demo](demo.png)
+![CLI Demo](Demo.png)
 
 ---
 
