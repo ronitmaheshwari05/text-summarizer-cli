@@ -90,6 +90,15 @@ text-summarizer-cli/
 
 ---
 
+
+---
+
+## 📸 Demo
+
+![CLI Demo](demo.png)
+
+---
+
 ### Author
 
 Ronit Maheshwari  
