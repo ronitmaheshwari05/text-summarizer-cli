@@ -79,8 +79,8 @@ def generate_summary(text: str, max_length: int = 200) -> str:
         prompt,
         max_new_tokens=max_length,
         min_new_tokens=70,
-        do_sample=True,              # 🔥 allows variation
-        temperature=0.9,             # stronger randomness
+        do_sample=True,              
+        temperature=0.9,             
         top_p=0.95,
         repetition_penalty=1.8,
         no_repeat_ngram_size=4
