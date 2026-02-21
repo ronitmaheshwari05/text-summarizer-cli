@@ -6,32 +6,53 @@
   <img src="https://img.shields.io/badge/Model-FLAN--T5--Small-yellow.svg" />
   <img src="https://img.shields.io/badge/Backend-PyTorch-red.svg" />
   <img src="https://img.shields.io/badge/Interface-CLI-green.svg" />
+  <img src="https://img.shields.io/badge/OS-Mac%20%7C%20Windows%20%7C%20Linux-lightgrey.svg" />
   <img src="https://img.shields.io/badge/Status-Active-success.svg" />
 </p>
 
-A lightweight, transformer-powered Command-Line Text Summarizer built using Hugging Face Transformers and Google’s FLAN-T5 model.
+A lightweight, transformer-powered Command-Line Text Summarizer built using Hugging Face Transformers and Google's FLAN-T5 model.
 
-This project demonstrates practical understanding of:
+This project demonstrates practical implementation of:
+
 - Transformer-based NLP systems  
 - Prompt engineering  
 - Beam search decoding  
 - Repetition control mechanisms  
-- CLI application design  
+- CLI-based ML application design  
 - Efficient local model inference  
 
 ---
 
-# 🚀 Installation, Setup, Requirements, Usage, Model Configuration, Example, Output, Project Structure, Demo & Author
+# 🚀 Installation, Setup, Requirements, Usage, Model Configuration, Example, Output, Project Structure & Author
 
-## 🔧 Clone Repository & Setup Environment
+---
+
+## 🔧 Clone the Repository (Mac / Linux / Windows)
 
 ```bash
 git clone https://github.com/ronitmaheshwari05/text-summarizer-cli.git
 cd text-summarizer-cli
+```
 
+---
+
+## 🖥️ Virtual Environment Setup
+
+### 🍎 Mac / Linux
+
+```bash
 python3 -m venv venv
 source venv/bin/activate
+pip install -r requirements.txt
+```
 
+---
+
+### 🪟 Windows (PowerShell)
+
+```powershell
+python -m venv venv
+venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
@@ -49,20 +70,19 @@ accelerate>=0.27.0
 
 ## ▶️ Usage
 
-Run the CLI tool directly from terminal:
+Run the CLI tool:
 
 ```bash
 python main.py "Paste your long article text here..."
 ```
 
-What happens internally:
+The system will:
 
-- Accepts long-form text input
-- Uses FLAN-T5 for abstractive summarization
-- Applies beam search for stable output
-- Controls repetition with n-gram blocking
-- Cleans artifacts from model output
-- Displays structured summary in terminal
+- Accept long-form text input  
+- Perform abstractive summarization using FLAN-T5  
+- Apply beam search for stable decoding  
+- Control repetition using n-gram blocking  
+- Output a clean structured summary in the terminal  
 
 ---
 
@@ -74,15 +94,15 @@ What happens internally:
 - Repetition Penalty: `1.6`
 - No Repeat N-gram Size: `3`
 - Deterministic Mode: `do_sample=False`
-- Early Stopping: Enabled
-- Length Control: `max_new_tokens` & `min_new_tokens`
+- Early Stopping Enabled
+- Output Length Control via `max_new_tokens`
 
 These configurations ensure:
 
 - Stable generation  
 - Reduced redundancy  
-- Structured compression  
 - Improved coherence  
+- Balanced compression  
 
 ---
 
@@ -91,13 +111,13 @@ These configurations ensure:
 ### 📥 Input
 
 ```
-Artificial Intelligence is transforming healthcare by enabling predictive analytics, improving diagnostic accuracy, and automating administrative workflows. It helps hospitals optimize resources and supports personalized treatment plans.
+Artificial Intelligence is transforming healthcare by enabling predictive analytics, improving diagnostic accuracy, and automating administrative workflows.
 ```
 
 ### 📤 Output
 
 ```
-Artificial Intelligence is revolutionizing healthcare through predictive analytics and automation. It enhances diagnostic accuracy, optimizes hospital resource allocation, and supports personalized treatment strategies while improving overall patient outcomes.
+Artificial Intelligence is reshaping healthcare through predictive analytics and automation, enhancing diagnostic precision and optimizing operational efficiency.
 ```
 
 ---
@@ -111,6 +131,7 @@ text-summarizer-cli/
 ├── summarizer.py
 ├── requirements.txt
 ├── README.md
+├── Demo.png
 └── venv/ (excluded from GitHub)
 ```
 
@@ -122,45 +143,30 @@ text-summarizer-cli/
 
 ---
 
-## 📝 How To Use
-
-1. Open terminal inside project directory  
-2. Type:
-
-```bash
-python main.py "Your long text here..."
-```
-
-Important:
-
-- Always wrap input text inside double quotes  
-- Press Enter  
-- Summary will be generated instantly in terminal  
-
----
-
 ## 🚀 Upcoming Features
 
-Planned enhancements:
-
-- 💾 Save generated summaries to local file  
+- 💾 Save generated summaries  
 - 📂 View saved summaries  
-- 📊 Display word count of output  
-- ⏱ Show execution time  
-- 🎯 Short / Medium / Long summary modes  
+- 📊 Word count display  
+- ⏱ Execution time measurement  
+- 🎯 Adjustable summary length modes  
 - 📄 File-based input support  
-- 🧪 Evaluation metrics (ROUGE scoring)  
-- ⚡ Performance benchmarking  
+- 📈 Evaluation metrics (ROUGE scoring)  
 
 ---
 
-## 🎯 Technical Highlights
+## 🤝 Contributions
 
-- Implemented abstractive summarization using instruction-tuned transformer
-- Optimized decoding strategy with beam search
-- Controlled hallucination & repetition using penalty mechanisms
-- Built lightweight inference pipeline for CPU-based systems
-- Designed modular CLI-based NLP application
+Contributions, feature suggestions, and improvements are welcome.
+
+If you would like to improve this project:
+
+1. Fork the repository  
+2. Create a new branch  
+3. Implement your improvements  
+4. Submit a Pull Request  
+
+If you suggest meaningful updates or optimizations, feel free to open a PR.
 
 ---
 
