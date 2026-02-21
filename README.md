@@ -111,13 +111,21 @@ These configurations ensure:
 ### 📥 Input
 
 ```
-Artificial Intelligence is transforming healthcare by enabling predictive analytics, improving diagnostic accuracy, and automating administrative workflows.
+Urban vertical farming is emerging as a transformative approach to food production in densely populated cities. As urban populations continue to grow, traditional agricultural systems face increasing pressure due to limited arable land, water scarcity, and supply chain disruptions. Vertical farming addresses these challenges by cultivating crops in stacked layers within controlled indoor environments. By leveraging hydroponics, aeroponics, and LED lighting systems, vertical farms can produce food year-round regardless of external weather conditions.
+
+One of the most significant advantages of vertical farming is its efficient resource utilization. Compared to traditional farming, hydroponic systems can reduce water usage by up to 90% because water is recycled within the system. Additionally, since crops are grown indoors, there is minimal need for pesticides, reducing chemical exposure and environmental contamination. The ability to control temperature, humidity, and nutrient levels also allows farmers to optimize plant growth cycles and achieve consistent yields.
+
+Technological integration plays a central role in the success of vertical farming operations. Sensors monitor environmental parameters such as light intensity, pH levels, and nutrient concentrations in real time. Data analytics platforms process this information to automate irrigation schedules and lighting adjustments. Some advanced facilities incorporate artificial intelligence to predict crop performance and detect early signs of plant stress or disease. This data-driven model enhances productivity while minimizing waste.
+
+Despite its advantages, vertical farming faces economic and scalability challenges. Initial setup costs are high due to infrastructure requirements, energy consumption, and specialized equipment. Electricity remains a major expense, particularly for artificial lighting systems. Critics argue that the energy footprint of vertical farms could offset their environmental benefits unless renewable energy sources are integrated into operations.
+
+Looking ahead, advancements in energy-efficient LEDs, renewable power integration, and automation technologies are expected to reduce operational costs. Governments and private investors are increasingly supporting urban agriculture initiatives as part of sustainability strategies. If technological and economic barriers continue to decrease, vertical farming may become a cornerstone of resilient urban food systems in the coming decades.
 ```
 
 ### 📤 Output
 
 ```
-Artificial Intelligence is reshaping healthcare through predictive analytics and automation, enhancing diagnostic precision and optimizing operational efficiency.
+Urban vertical farming is emerging as a transformative approach to food production in densely populated cities. As urban populations continue to grow, traditional agricultural systems face increasing pressure due to limited arable land, water scarcity, and supply chain disruptions. Vertical farming addresses these challenges by cultivating crops in stacked layers within controlled indoor environments. By leveraging hydroponics, aeroponics
 ```
 
 ---
